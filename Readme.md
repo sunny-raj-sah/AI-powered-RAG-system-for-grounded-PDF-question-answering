@@ -415,7 +415,7 @@ Add screenshots here.
 Example:
 
 ```
-![Screenshot](./screenshot.png)
+![Screenshot](./E:\PDF-Grounded-AI-Document-Q-A-RAG-System\screenshot.png)
 ```
 
 ---
