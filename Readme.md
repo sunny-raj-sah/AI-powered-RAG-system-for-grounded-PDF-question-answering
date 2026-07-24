@@ -142,9 +142,9 @@ Book-Grounded-AI
 ## Clone Repository
 
 ```bash
-git clone https://github.com/yourusername/book-grounded-ai.git
+git clone https://github.com/sunny-raj-sah/AI-powered-RAG-system-for-grounded-PDF-question-answering..git
 
-cd book-grounded-ai
+cd AI-powered-RAG-system-for-grounded-PDF-question-answering.
 ```
 
 ---
@@ -415,13 +415,7 @@ Add screenshots here.
 Example:
 
 ```
-screenshots/
-
-home.png
-
-upload.png
-
-answer.png
+![Screenshot](./screenshot.png)
 ```
 
 ---
@@ -445,7 +439,7 @@ Backend
 Backend Engineer • Full Stack Engineer • AI Engineer
 
 - GitHub: https://github.com/sunny-raj-sah
-- LinkedIn: https://www.linkedin.com/in/sunnyraj2727/
+- LinkedIn:https://www.linkedin.com/in/sunny-raj-885588313/
 
 ---
 
