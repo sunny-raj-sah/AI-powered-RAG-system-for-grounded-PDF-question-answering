@@ -142,7 +142,7 @@ Book-Grounded-AI
 ## Clone Repository
 
 ```bash
-git clone https://github.com/sunny-raj-sah/AI-powered-RAG-system-for-grounded-PDF-question-answering..git
+git clone https://github.com/sunny-raj-sah/AI-powered-RAG-system-for-grounded-PDF-question-answering.git
 
 cd AI-powered-RAG-system-for-grounded-PDF-question-answering.
 ```
