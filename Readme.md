@@ -1,11 +1,11 @@
 # 📚 AI-powered RAG system for grounded PDF question answering.  
 
-  ## [Deployment Link](https://ai-powered-rag-system-for-grounded.vercel.app/)
-
+ 
 An AI-powered Retrieval-Augmented Generation (RAG) application that allows users to upload PDF documents, index their contents using vector embeddings, and ask natural language questions grounded strictly in the uploaded document.
 
 The project combines **semantic search**, **LLMs**, and **vector embeddings** to generate accurate, context-aware answers while preventing hallucinations.
 
+ ## [Deployment Link](https://ai-powered-rag-system-for-grounded.vercel.app/)
 ---
 
 ## 🚀 Features
