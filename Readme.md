@@ -5,7 +5,7 @@ An AI-powered Retrieval-Augmented Generation (RAG) application that allows users
 
 The project combines **semantic search**, **LLMs**, and **vector embeddings** to generate accurate, context-aware answers while preventing hallucinations.
 
- ## [Deployment Link](https://ai-powered-rag-system-for-grounded.vercel.app/)
+   Live app : https://ai-powered-rag-system-for-grounded.vercel.app/
 ---
 
 ## 🚀 Features
