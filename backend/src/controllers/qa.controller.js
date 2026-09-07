@@ -23,6 +23,8 @@ exports.askQuestion = async (req, res) => {
     const clientKey =
 req.headers["x-api-key"];
 
+
+ 
     if (!question) {
       return res.status(400).json({ error: "Question is required" });
     }
@@ -85,13 +87,19 @@ ${question}
     // for the groq
 let answer;
 if(clientKey){
-
+ try{
   answer =
   await generateOpenAIAnswer(
     prompt,
     clientKey
   );
-
+ }
+ catch(error){
+  return res.status(401).json({
+      error: "Failed to use the provided OpenAI API key",
+      details: error.message,
+    });
+ }
 
 }
 else{
@@ -215,3 +223,7 @@ else{
 // //     });
 // //   }
 // // };
+
+
+
+ 

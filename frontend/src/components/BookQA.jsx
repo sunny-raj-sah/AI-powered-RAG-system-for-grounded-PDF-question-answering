@@ -1,4 +1,5 @@
  import  { useState, useRef,useEffect } from "react";
+ import toast, { Toaster } from "react-hot-toast";
  import {
    BookOpen,
    KeyRound,
@@ -36,14 +37,19 @@
      apiKey ? { "x-api-key": apiKey } : {};
  
    const handleSaveKey = () => {
-     if (!apiKey.trim()) return;
+     if (!apiKey.trim()){ 
+      toast.error("Please enter an OpenAI API key.");
+      
+      return
+     };
 
       sessionStorage.setItem(
     "OPENAI_API_KEY",
     apiKey
   );
-
+        setApiKey(apiKey.trim());
      setKeySaved(true);
+       toast.success("OpenAI API key saved.");
    };
  
    const handleFileChange = (e) => {
@@ -53,7 +59,9 @@
  
    const handleUpload = async () => {
      if (!file) {
-       setUploadState({ status: "error", message: "Choose a PDF before uploading." });
+       const message = "Choose a PDF before uploading.";
+       setUploadState({ status: "error", message :"Choose a PDF before uploading."});
+        toast.error(message);
        return;
      }
      const formData = new FormData();
@@ -68,19 +76,33 @@
          body: formData,
        });
        const data = await response.json();
-       if (!response.ok) throw new Error(data.message || "Upload failed");
+       if (!response.ok) throw new Error(data.details || data.error || data.message || "Upload failed");
        setUploadState({
          status: "success",
          message: `Indexed ${data.pages} pages into ${data.totalChunks} chunks.`,
        });
+         toast.success("Book uploaded and indexed successfully.");
+
      } catch (err) {
-       setUploadState({ status: "error", message: err.message || "Upload failed. Is the server running?" });
+       const message =
+    err.message || "Upload failed. Is the server running?";
+
+  setUploadState({
+    status: "error",
+    message,
+  });
+
+  toast.error(message);
+      
+      //  setUploadState({ status: "error", message: err.message || "Upload failed. Is the server running?" });
      }
    };
  
    const handleAsk = async () => {
      if (!question.trim()) {
+        const message = "Type a question first.";
        setAskState({ status: "error", message: "Type a question first." });
+       toast.error(message);
        return;
      }
      setAskState({ status: "loading", message: "" });
@@ -96,11 +118,14 @@
          body: JSON.stringify({ question }),
        });
        const data = await response.json();
-       if (!response.ok) throw new Error(data.message || "Request failed");
+       if (!response.ok) throw new Error(data.details || data.error || data.message || "Request failed");
        setAnswer(data.answer);
        setAskState({ status: "success", message: "" });
      } catch (err) {
+      const message =
+    err.message || "Failed to get an answer.";
        setAskState({ status: "error", message: err.message || "Failed to get an answer." });
+        toast.error(message);
      }
    };
 
@@ -127,6 +152,18 @@
          fontFamily: "'Source Serif 4', 'Georgia', serif",
        }}
      >
+      <Toaster
+  position="top-right"
+  toastOptions={{
+    duration: 4000,
+    style: {
+      background: "#1B2130",
+      color: "#E9E4D8",
+      border: "1px solid #2C3346",
+      fontFamily: "Inter, sans-serif",
+    },
+  }}
+/>
        <style>{`
          @import url('https://fonts.googleapis.com/css2?family=Source+Serif+4:wght@400;500;600;700&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap');
          .sans { font-family: 'Inter', sans-serif; }
