@@ -147,7 +147,7 @@
      <div
        style={{
          minHeight: "100vh",
-         background: "#12161F",
+         background: "#101319",
          color: "#E9E4D8",
          fontFamily: "'Source Serif 4', 'Georgia', serif",
        }}
@@ -178,7 +178,7 @@
            width: 300px;
            flex-shrink: 0;
            border-right: 1px solid #232A3B;
-           padding: 32px 22px;
+           padding: 36px 22px;
            background: #151A25;
          }
          .main {
@@ -202,14 +202,14 @@
        <div className="app-shell">
          {/* SIDEBAR — setup: key + book */}
          <aside className="sidebar">
-           <div style={{ display: "flex", alignItems: "center", gap: 10, marginBottom: 30 }}>
+           <div style={{ display: "flex", alignItems: "center", gap: 20, marginBottom: 30 }}>
              <div
                style={{
                  width: 34,
                  height: 34,
                  borderRadius: 8,
-                 background: "#1B2130",
-                 border: "1px solid #2C3346",
+                 background: "#1e232e",
+                 border: "1px solid #adb2c1",
                  display: "flex",
                  alignItems: "center",
                  justifyContent: "center",
@@ -218,7 +218,7 @@
              >
                <BookOpen size={17} color="#C89B4A" strokeWidth={1.75} />
              </div>
-             <h1 style={{ fontSize: 18, fontWeight: 700, margin: 0, letterSpacing: "-0.01em" }}>
+             <h1 style={{ fontSize: 18, fontWeight: 700, margin: 30, letterSpacing: "-0.01em",  color: "white",}}>
                Ask the Book
              </h1>
            </div>
