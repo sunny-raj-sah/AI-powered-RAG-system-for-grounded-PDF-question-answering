@@ -1,13 +1,18 @@
- function Footer() {
+
+function Footer() {
   return (
     <footer
       style={{
+        position: "fixed",
+        bottom: 0,
+        left: 0,
         width: "100%",
+        zIndex: 1000,
         background: "#ffffff",
         padding: "5px 0",
         textAlign: "center",
         borderTop: "1px solid #ddd",
-        marginTop: "5px",
+        boxSizing: "border-box",
       }}
     >
       <p style={{ margin: 0, color: "#666" }}>
@@ -18,3 +23,6 @@
 }
 
 export default Footer;
+
+
+ 
